@@ -7,7 +7,7 @@ model = pickle.load(open('lr.pkl', 'rb'))
 
 @app.route('/')
 def home():
-    return render_template('indexhd.html')
+    return render_template('home.html')
 
 
 @app.route('/predict',methods=['POST'])
@@ -21,7 +21,7 @@ def predict():
 
 #    output = round(prediction[0], 2)
 
-    return render_template('indexhd.html', prediction_text=f'Person has heart disease or not: {prediction}')
+    return render_template('home.html', prediction_text=f'Person has heart disease or not: {prediction}')
 
 if __name__ == "__main__":
     app.run()
